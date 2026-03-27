@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>离线游戏商城 - PWA Game Store</title>
+    <meta name="description" content="20+ 经典游戏的离线商城">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; color: white; margin-bottom: 30px; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .game-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .game-card:hover { transform: translateY(-4px); }
+        .game-title { font-size: 1.2em; font-weight: bold; margin-bottom: 8px; color: #333; }
+        .game-desc { color: #666; font-size: 0.9em; margin-bottom: 15px; }
+        .game-link { display: inline-block; background: #667eea; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 0.9em; }
+        .category { margin-bottom: 40px; }
+        .category-title { color: white; font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgba(255,255,255,0.3); }
+        .offline-status { position: fixed; top: 10px; right: 10px; background: #4CAF50; color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="offline-status" id="offlineStatus">在线</div>
+    <div class="container">
+        <header>
+            <h1>🎮 离线游戏商城</h1>
+            <p>20+ 经典游戏，完全离线畅玩</p>
+        </header>
+        
+        <main id="gamesContainer">
+            <!-- 游戏将通过JavaScript动态加载 -->
+        </main>
+    </div>
+
+    <script>
+        // PWA检测
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+
+        // 离线状态检测
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        
+        function updateOnlineStatus() {
+            document.getElementById('offlineStatus').textContent = 
+                navigator.onLine ? '在线' : '离线';
+            document.getElementById('offlineStatus').style.background = 
+                navigator.onLine ? '#4CAF50' : '#f44336';
+        }
+        updateOnlineStatus();
+
+        // 游戏数据
+        const games = [
+            // 微软经典游戏
+            { name: '扫雷', desc: '经典扫雷游戏', category: '微软经典', path: '../src/games/microsoft-classics/Minesweeper/index.html' },
+            { name: '纸牌接龙', desc: 'Klondike纸牌游戏', category: '微软经典', path: '../src/games/microsoft-classics/Solitaire/index.html' },
+            { name: '蜘蛛纸牌', desc: '多列纸牌游戏', category: '微软经典', path: '../src/games/microsoft-classics/Spider_Solitaire/index.html' },
+            { name: '空当接龙', desc: 'FreeCell策略游戏', category: '微软经典', path: '../src/games/microsoft-classics/Freecell/freecell.html' },
+            { name: '红心大战', desc: '四人卡牌对战', category: '微软经典', path: '../src/games/microsoft-classics/hearts/index.html' },
+            
+            // 数字益智游戏
+            { name: '2048', desc: '数字合并游戏', category: '数字益智', path: '../src/games/digital-puzzles/2048/index.html' },
+            { name: '数独', desc: '逻辑推理填数', category: '数字益智', path: '../src/games/digital-puzzles/sudoku/index.html' },
+            { name: '记忆翻牌', desc: '配对记忆游戏', category: '数字益智', path: '../src/games/digital-puzzles/memory-game/index.html' },
+            { name: '孔明棋', desc: '跳棋消除游戏', category: '数字益智', path: '../src/games/digital-puzzles/peg-solitaire/index.html' },
+            
+            // 街机动作游戏
+            { name: '俄罗斯方块', desc: '经典方块游戏', category: '街机动作', path: '../src/games/arcade-action/tetris/index.html' },
+            { name: '贪吃蛇', desc: '经典蛇形游戏', category: '街机动作', path: '../src/games/arcade-action/snake-game/index.html' },
+            { name: '打砖块', desc: '弹球击砖游戏', category: '街机动作', path: '../src/games/arcade-action/breakout/index.html' },
+            { name: '吃豆人', desc: '经典迷宫游戏', category: '街机动作', path: '../src/games/arcade-action/pacman/index.html' },
+            { name: 'Flappy Bird', desc: '飞行躲避游戏', category: '街机动作', path: '../src/games/arcade-action/Flappy_Bird/index.html' },
+            
+            // 棋牌策略游戏
+            { name: '井字棋', desc: '简单策略游戏', category: '棋牌策略', path: '../src/games/board-strategy/tictactoe/index.html' },
+            { name: '四子棋', desc: '连线策略游戏', category: '棋牌策略', path: '../src/games/board-strategy/connect-four/index.html' },
+            { name: '国际象棋', desc: '经典棋类游戏', category: '棋牌策略', path: '../src/games/board-strategy/chessJS/index.html' },
+            { name: '跳棋', desc: '跳跃吃子游戏', category: '棋牌策略', path: '../src/games/board-strategy/checkers/index.html' },
+            { name: '黑白棋', desc: '翻转棋子游戏', category: '棋牌策略', path: '../src/games/board-strategy/Reversi/index.html' },
+            { name: '五子棋', desc: '连珠游戏', category: '棋牌策略', path: '../src/games/board-strategy/Gomoku/index.html' },
+            
+            // 文字游戏
+            { name: 'Wordle', desc: '单词猜谜游戏', category: '文字游戏', path: '../src/games/word-games/wordle-clone/index.html' }
+        ];
+
+        // 渲染游戏
+        function renderGames() {
+            const container = document.getElementById('gamesContainer');
+            const categories = [...new Set(games.map(game => game.category))];
+            
+            let html = '';
+            categories.forEach(category => {
+                const categoryGames = games.filter(game => game.category === category);
+                html += `
+                    <div class="category">
+                        <h2 class="category-title">${category}</h2>
+                        <div class="games-grid">
+                `;
+                categoryGames.forEach(game => {
+                    html += `
+                        <div class="game-card">
+                            <div class="game-title">${game.name}</div>
+                            <div class="game-desc">${game.desc}</div>
+                            <a href="${game.path}" class="game-link" target="_blank">开始游戏</a>
+                        </div>
+                    `;
+                });
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // 初始化
+        renderGames();
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "pwa-game-store",
+  "version": "1.0.0",
+  "description": "PWA Offline Game Store with 20+ Classic Games",
+  "scripts": {
+    "dev": "bun run --watch src/index.tsx",
+    "build": "bun build src/index.tsx --outdir public --target=browser",
+    "start": "bun run public/index.js",
+    "serve": "bun --port 3000 public"
+  },
+  "keywords": ["pwa", "games", "offline", "webstore"],
+  "author": "CodeBuddy",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "latest",
+    "@types/node": "latest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "games": [
+    // Original Microsoft Classics
+    {"id": "minesweeper-1", "name": "扫雷", "description": "经典扫雷游戏", "category": "微软经典", "path": "games/microsoft-classics/Minesweeper/index.html"},
+    {"id": "solitaire-1", "name": "纸牌接龙", "description": "Klondike纸牌游戏", "category": "微软经典", "path": "games/microsoft-classics/Solitaire/index.html"},
+    {"id": "spider-solitaire-1", "name": "蜘蛛纸牌", "description": "多列纸牌游戏", "category": "微软经典", "path": "games/microsoft-classics/Spider_Solitaire/index.html"},
+    {"id": "freecell-1", "name": "空当接龙", "description": "FreeCell策略游戏", "category": "微软经典", "path": "games/microsoft-classics/Freecell/freecell.html"},
+    {"id": "hearts-1", "name": "红心大战", "description": "四人卡牌对战", "category": "微软经典", "path": "games/microsoft-classics/hearts/index.html"},
+    
+    // Original Digital Puzzles
+    {"id": "2048-1", "name": "2048", "description": "数字合并游戏", "category": "数字益智", "path": "games/digital-puzzles/2048/index.html"},
+    {"id": "sudoku-1", "name": "数独", "description": "逻辑推理填数", "category": "数字益智", "path": "games/digital-puzzles/sudoku/index.html"},
+    {"id": "memory-1", "name": "记忆翻牌", "description": "配对记忆游戏", "category": "数字益智", "path": "games/digital-puzzles/memory-game/index.html"},
+    {"id": "peg-solitaire-1", "name": "孔明棋", "description": "跳棋消除游戏", "category": "数字益智", "path": "games/digital-puzzles/peg-solitaire/index.html"},
+    {"id": "jigsaw-1", "name": "拼图", "description": "图像拼图游戏", "category": "数字益智", "path": "games/digital-puzzles/Jigsaw_Puzzle/index.html"},
+    
+    // Original Arcade Action
+    {"id": "tetris-1", "name": "俄罗斯方块", "description": "经典方块游戏", "category": "街机动作", "path": "games/arcade-action/tetris/index.html"},
+    {"id": "snake-1", "name": "贪吃蛇", "description": "经典蛇形游戏", "category": "街机动作", "path": "games/arcade-action/snake-game/index.html"},
+    {"id": "breakout-1", "name": "打砖块", "description": "弹球击砖游戏", "category": "街机动作", "path": "games/arcade-action/breakout/index.html"},
+    {"id": "pacman-1", "name": "吃豆人", "description": "经典迷宫游戏", "category": "街机动作", "path": "games/arcade-action/pacman/index.html"},
+    {"id": "flappy-bird-1", "name": "Flappy Bird", "description": "飞行躲避游戏", "category": "街机动作", "path": "games/arcade-action/Flappy_Bird/index.html"},
+    
+    // Original Board Strategy
+    {"id": "tictactoe-1", "name": "井字棋", "description": "简单策略游戏", "category": "棋牌策略", "path": "games/board-strategy/tictactoe/index.html"},
+    {"id": "connect-four-1", "name": "四子棋", "description": "连线策略游戏", "category": "棋牌策略", "path": "games/board-strategy/connect-four/index.html"},
+    {"id": "chess-1", "name": "国际象棋", "description": "经典棋类游戏", "category": "棋牌策略", "path": "games/board-strategy/chessJS/index.html"},
+    {"id": "checkers-1", "name": "跳棋", "description": "跳跃吃子游戏", "category": "棋牌策略", "path": "games/board-strategy/checkers/index.html"},
+    {"id": "reversi-1", "name": "黑白棋", "description": "翻转棋子游戏", "category": "棋牌策略", "path": "games/board-strategy/Reversi/index.html"},
+    {"id": "gomoku-1", "name": "五子棋", "description": "连珠游戏", "category": "棋牌策略", "path": "games/board-strategy/Gomoku/index.html"},
+    {"id": "mahjong-1", "name": "麻将消除", "description": "配对消除游戏", "category": "棋牌策略", "path": "games/board-strategy/Green_Mahjong/index.html"},
+    
+    // Original Word Games
+    {"id": "wordle-1", "name": "Wordle", "description": "单词猜谜游戏", "category": "文字游戏", "path": "games/word-games/wordle-clone/index.html"},
+    
+    // Additional Games Collection
+    {"id": "candy-crush-1", "name": "糖果粉碎", "description": "经典三消游戏", "category": "休闲益智", "path": "games/additional/01-Candy-Crush-Game/index.html"},
+    {"id": "pacman-additional-1", "name": "吃豆人加强版", "description": "增强版吃豆人", "category": "街机动作", "path": "games/additional/02-Pac-Man-Game/index.html"},
+    {"id": "chess-additional-1", "name": "国际象棋", "description": "另一版本国际象棋", "category": "棋牌策略", "path": "games/additional/03-Chess-Game/index.html"},
+    {"id": "doodle-jump-1", "name": "涂鸦跳跃", "description": "跳跃收集游戏", "category": "街机动作", "path": "games/additional/04-Doodle-Jump-Game/index.html"},
+    {"id": "solitaire-additional-1", "name": "纸牌接龙", "description": "另一版本纸牌游戏", "category": "微软经典", "path": "games/additional/05-Solitaire-Game/index.html"},
+    {"id": "sudoku-additional-1", "name": "数独", "description": "另一版本数独", "category": "数字益智", "path": "games/additional/06-Sudoku-Game/index.html"},
+    {"id": "crossy-road-1", "name": "横冲直撞", "description": "街机跑酷游戏", "category": "街机动作", "path": "games/additional/07-Crossy-Road-Game/index.html"},
+    {"id": "rock-paper-scissors-1", "name": "石头剪刀布", "description": "经典猜拳游戏", "category": "休闲益智", "path": "games/additional/08-Rock-Paper-Scissors/index.html"},
+    {"id": "flappy-bird-additional-1", "name": "Flappy Bird", "description": "另一版本Flappy Bird", "category": "街机动作", "path": "games/additional/09-Flappy-Bird-Game/index.html"},
+    {"id": "2048-additional-1", "name": "2048", "description": "另一版本2048", "category": "数字益智", "path": "games/additional/10-2048-Game/index.html"},
+    {"id": "wordle-additional-1", "name": "Wordle", "description": "另一版本Wordle", "category": "文字游戏", "path": "games/additional/11-Wordle-Game/index.html"},
+    {"id": "hangman-1", "name": "刽子手", "description": "猜单词游戏", "category": "文字游戏", "path": "games/additional/12-Hangman-Game/index.html"},
+    {"id": "tower-blocks-1", "name": "叠塔游戏", "description": "平衡堆叠游戏", "category": "街机动作", "path": "games/additional/13-Tower-Blocks/index.html"},
+    {"id": "archery-1", "name": "射箭游戏", "description": "瞄准射击游戏", "category": "街机动作", "path": "games/additional/14-Archery-Game/index.html"},
+    {"id": "tic-tac-toe-additional-1", "name": "井字棋", "description": "另一版本井字棋", "category": "棋牌策略", "path": "games/additional/15-Tic-Tac-Toe/index.html"},
+    {"id": "minesweeper-additional-1", "name": "扫雷", "description": "另一版本扫雷", "category": "微软经典", "path": "games/additional/16-Minesweeper-Game/index.html"},
+    {"id": "speed-typing-1", "name": "极速打字", "description": "打字速度测试", "category": "文字游戏", "path": "games/additional/17-Speed-Typing-Game/index.html"},
+    {"id": "breakout-additional-1", "name": "打砖块", "description": "另一版本打砖块", "category": "街机动作", "path": "games/additional/18-Breakout-Game/index.html"},
+    {"id": "ping-pong-1", "name": "乒乓球", "description": "经典乒乓游戏", "category": "街机动作", "path": "games/additional/19-Ping-Pong-Game/index.html"},
+    {"id": "tetris-additional-1", "name": "俄罗斯方块", "description": "另一版本俄罗斯方块", "category": "街机动作", "path": "games/additional/20-Tetris-Game/index.html"},
+    {"id": "tilting-maze-1", "name": "倾斜迷宫", "description": "重力感应迷宫", "category": "街机动作", "path": "games/additional/21-Tilting-Maze-Game/index.html"},
+    {"id": "memory-card-additional-1", "name": "记忆翻牌", "description": "另一版本记忆游戏", "category": "数字益智", "path": "games/additional/22-Memory-Card-Game/index.html"},
+    {"id": "number-guessing-1", "name": "数字猜谜", "description": "猜数字游戏", "category": "数字益智", "path": "games/additional/23-Type-Number-Guessing-Game/index.html"},
+    {"id": "snake-additional-1", "name": "贪吃蛇", "description": "另一版本贪吃蛇", "category": "街机动作", "path": "games/additional/24-Snake-Game/index.html"},
+    {"id": "connect-four-additional-1", "name": "四子棋", "description": "另一版本四子棋", "category": "棋牌策略", "path": "games/additional/25-Connect-Four-Game/index.html"},
+    {"id": "insect-catch-1", "name": "抓昆虫", "description": "反应力测试游戏", "category": "街机动作", "path": "games/additional/26-Insect-Catch-Game/index.html"},
+    {"id": "typing-additional-1", "name": "打字游戏", "description": "基础打字练习", "category": "文字游戏", "path": "games/additional/27-Typing-Game/index.html"},
+    {"id": "dice-roll-1", "name": "掷骰子", "description": "骰子模拟器", "category": "休闲益智", "path": "games/additional/28-Dice-Roll-Simulator/index.html"},
+    {"id": "shape-clicker-1", "name": "形状点击", "description": "快速点击游戏", "category": "街机动作", "path": "games/additional/29-Shape-Clicker-Game/index.html"},
+    {"id": "typing-game-2-1", "name": "打字游戏2", "description": "进阶打字游戏", "category": "文字游戏", "path": "games/additional/30-Typing-Game/index.html"},
+    {"id": "speak-number-1", "name": "语音数字", "description": "语音猜数字", "category": "数字益智", "path": "games/additional/31-Speak-Number-Guessing-Game/index.html"},
+    {"id": "fruit-slicer-1", "name": "水果切片", "description": "切水果游戏", "category": "街机动作", "path": "games/additional/32-Fruit-Slicer-Game/index.html"},
+    {"id": "quiz-1", "name": "问答游戏", "description": "知识问答挑战", "category": "文字游戏", "path": "games/additional/33-Quiz-Game/index.html"},
+    {"id": "emoji-catcher-1", "name": "表情包捕获", "description": "捕捉表情游戏", "category": "街机动作", "path": "games/additional/34-Emoji-Catcher-Game/index.html"},
+    {"id": "whack-a-mole-1", "name": "打地鼠", "description": "经典打地鼠游戏", "category": "街机动作", "path": "games/additional/35-Whack-A-Mole-Game/index.html"},
+    {"id": "simon-says-1", "name": "西蒙记忆", "description": "颜色序列记忆", "category": "数字益智", "path": "games/additional/36-Simon-Says-Game/index.html"},
+    {"id": "sliding-puzzle-1", "name": "滑块拼图", "description": "数字滑块游戏", "category": "数字益智", "path": "games/additional/37-Sliding-Puzzle-Game/index.html"}
+  ],
+  "categories": ["微软经典", "数字益智", "街机动作", "棋牌策略", "文字游戏", "休闲益智"]
+}
